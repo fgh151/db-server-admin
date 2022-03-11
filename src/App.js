@@ -1,12 +1,15 @@
 import * as React from "react";
 import jsonServerProvider from 'ra-data-json-server';
 import {Admin, fetchUtils, Resource} from 'react-admin';
-import {TopicsList} from "./topics";
-import {TopicCreate} from "./TopicCreate";
-import {TopicEdit} from "./TopicEdit";
+import {TopicCreate} from "./pages/topic/TopicCreate";
+import {TopicEdit} from "./pages/topic/TopicEdit";
 import AuthProvider from "./authProvider";
 import LoginPage from "./LoginPage";
 import LogoutButton from "./components/LogoutButton";
+import {UserList} from "./pages/user/list";
+import {TopicsList} from "./pages/topic/list";
+import {CreateUser} from "./pages/user/Create";
+import {EditUser} from "./pages/user/Edit";
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -21,14 +24,25 @@ const dataProvider = jsonServerProvider('http://localhost:9090', httpClient);
 
 
 const App = () => (
-    <Admin dataProvider={dataProvider} authProvider={AuthProvider} loginPage={LoginPage}>
+    <Admin
+        dataProvider={dataProvider}
+        authProvider={AuthProvider}
+        loginPage={LoginPage}
+        logoutButton={LogoutButton}
+    >
         <Resource
             name="admin/topics"
             list={TopicsList}
             options={{label: 'Topics'}}
             create={TopicCreate}
             edit={TopicEdit}
-            logoutButton={LogoutButton}
+        />
+        <Resource
+            name="admin/users"
+            list={UserList}
+            options={{label: 'Admins'}}
+            create={CreateUser}
+            edit={EditUser}
         />
     </Admin>
 );
