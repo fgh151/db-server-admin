@@ -12,7 +12,7 @@ const LoginPage = ({ theme }) => {
     const submit = e => {
         e.preventDefault();
         // will call authProvider.login({ email, password })
-        login({ email, password }).catch(() =>
+        login({email, password} ).catch(() =>
             notify('Invalid email or password')
         );
     };
@@ -32,6 +32,7 @@ const LoginPage = ({ theme }) => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
+                <button type="submit">login</button>
             </form>
             <Notification />
         </ThemeProvider>

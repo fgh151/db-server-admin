@@ -1,8 +1,8 @@
 const authProvider = {
-    login: ({ username, password }) =>  {
-        const request = new Request('https://mydomain.com/authenticate', {
+    login: ({email, password}) =>  {
+        const request = new Request('http://localhost:9090/admin/auth', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ email: email, password: password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),
         });
         return fetch(request)
@@ -13,21 +13,26 @@ const authProvider = {
                 return response.json();
             })
             .then(auth => {
-                localStorage.setItem('auth', JSON.stringify(auth));
+                localStorage.setItem('user', JSON.stringify(auth));
+                localStorage.setItem('token', JSON.stringify(auth.token));
             })
             .catch(() => {
                 throw new Error('Network error')
             });
     },
-    checkAuth: () => {
-        // Required for the authentication to work
-        return Promise.resolve();
-    },
+    checkAuth: () => localStorage.getItem('token')
+        ? Promise.resolve()
+        : Promise.reject({ redirectTo: '/login' }),
     getPermissions: () => {
+        console.log('get permission')
         // Required for the authentication to work
         return Promise.resolve();
     },
-    // ...
+    logout: () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        return Promise.resolve();
+    },
 };
 
 export default authProvider;
