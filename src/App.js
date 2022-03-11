@@ -10,6 +10,8 @@ import {UserList} from "./pages/user/list";
 import {TopicsList} from "./pages/topic/list";
 import {CreateUser} from "./pages/user/Create";
 import {EditUser} from "./pages/user/Edit";
+import customRoutes from './customRoutes';
+import Layout from "./Layout";
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -25,6 +27,9 @@ const dataProvider = jsonServerProvider('http://localhost:9090', httpClient);
 
 const App = () => (
     <Admin
+        // menu={Menu}
+        layout={Layout}
+        customRoutes={customRoutes}
         dataProvider={dataProvider}
         authProvider={AuthProvider}
         loginPage={LoginPage}
