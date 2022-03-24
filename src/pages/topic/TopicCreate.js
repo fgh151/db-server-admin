@@ -7,6 +7,7 @@ export const TopicCreate = (props) => (
         <SimpleForm>
             <TextInput source="topic" validate={required()}/>
             <TextInput source="key" validate={required()}/>
+            <TextInput multiline source="origins" validate={required()}/>
         </SimpleForm>
     </Create>
 );
