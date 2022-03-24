@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Monitor from './pages/Monitor';
+import Monitor from './pages/monitor/Monitor';
 
 const routes = [
     <Route exact path="/monitor" component={Monitor} />,

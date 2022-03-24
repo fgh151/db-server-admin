@@ -7,7 +7,7 @@ import LabelIcon from '@material-ui/icons/Label';
 const MainMenu = (props) => (
     <Menu {...props}>
         <DashboardMenuItem />
-        <MenuItemLink to="/admin/topics" primaryText="Posts" leftIcon={<BookIcon />}/>
+        <MenuItemLink to="/admin/topics" primaryText="Topics" leftIcon={<BookIcon />}/>
         <MenuItemLink to="/admin/users" primaryText="Users" leftIcon={<PeopleIcon />}/>
         <MenuItemLink to="/monitor" primaryText="Monitor" leftIcon={<LabelIcon />}/>
     </Menu>
