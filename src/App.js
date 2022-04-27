@@ -12,6 +12,9 @@ import {CreateUser} from "./pages/user/Create";
 import {EditUser} from "./pages/user/Edit";
 import customRoutes from './customRoutes';
 import Layout from "./Layout";
+import {ConfigList} from "./pages/config/list";
+import {ConfigCreate} from "./pages/config/ConfigCreate";
+import {EditConfig} from "./pages/config/ConfigEdit";
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -48,6 +51,13 @@ const App = () => (
             options={{label: 'Admins'}}
             create={CreateUser}
             edit={EditUser}
+        />
+        <Resource
+            name="admin/config"
+            list={ConfigList}
+            options={{label: 'Configs'}}
+            create={ConfigCreate}
+            edit={EditConfig}
         />
     </Admin>
 );

@@ -9,6 +9,7 @@ const MainMenu = (props) => (
         <DashboardMenuItem />
         <MenuItemLink to="/admin/topics" primaryText="Topics" leftIcon={<BookIcon />}/>
         <MenuItemLink to="/admin/users" primaryText="Users" leftIcon={<PeopleIcon />}/>
+        <MenuItemLink to="/admin/config" primaryText="Configs" leftIcon={<PeopleIcon />}/>
         <MenuItemLink to="/monitor" primaryText="Monitor" leftIcon={<LabelIcon />}/>
     </Menu>
 );
