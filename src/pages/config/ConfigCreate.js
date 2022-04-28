@@ -7,6 +7,7 @@ export const ConfigCreate = (props) => (
         <SimpleForm>
             <TextInput source="title" validate={required()}/>
             <TextInput multiline source="body" validate={required()}/>
+            <TextInput source="project_id" validate={required()}/>
         </SimpleForm>
     </Create>
 );

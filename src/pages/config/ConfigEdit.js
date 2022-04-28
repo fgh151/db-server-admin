@@ -6,6 +6,7 @@ export const EditConfig = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <TextInput source="title" validate={required()}/>
+            <TextInput source="project_id" validate={required()}/>
             <TextInput
                 multiline={true}
                 minRows={10}
