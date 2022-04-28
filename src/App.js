@@ -13,8 +13,11 @@ import {EditUser} from "./pages/user/Edit";
 import customRoutes from './customRoutes';
 import Layout from "./Layout";
 import {ConfigList} from "./pages/config/list";
-import {ConfigCreate} from "./pages/config/ConfigCreate";
 import {EditConfig} from "./pages/config/ConfigEdit";
+import {ConfigCreate} from "./pages/config/ConfigCreate";
+import {DsCreate} from "./pages/ds/DsCreate";
+import {EditDs} from "./pages/ds/DsEdit";
+import {DsList} from "./pages/ds/list";
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -58,6 +61,13 @@ const App = () => (
             options={{label: 'Configs'}}
             create={ConfigCreate}
             edit={EditConfig}
+        />
+        <Resource
+            name="admin/ds"
+            list={DsList}
+            options={{label: 'Configs'}}
+            create={DsCreate}
+            edit={EditDs}
         />
     </Admin>
 );
