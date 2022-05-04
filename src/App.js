@@ -4,7 +4,6 @@ import {Admin, fetchUtils, Resource} from 'react-admin';
 import {TopicCreate} from "./pages/topic/TopicCreate";
 import {TopicEdit} from "./pages/topic/TopicEdit";
 import AuthProvider from "./authProvider";
-import LoginPage from "./LoginPage";
 import LogoutButton from "./components/LogoutButton";
 import {UserList} from "./pages/user/list";
 import {TopicsList} from "./pages/topic/list";
@@ -39,7 +38,6 @@ const App = () => (
         customRoutes={customRoutes}
         dataProvider={dataProvider}
         authProvider={AuthProvider}
-        loginPage={LoginPage}
         logoutButton={LogoutButton}
     >
         <Resource
