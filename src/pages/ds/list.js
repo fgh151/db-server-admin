@@ -5,7 +5,7 @@ export const DsList = props => {
     return (<List {...props}>
         <Datagrid rowClick="edit">
             <TextField source="id"/>
-            <TextField source="Title"/>
+            <TextField source="title"/>
         </Datagrid>
     </List>);
 }
