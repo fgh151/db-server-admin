@@ -33,6 +33,7 @@ const dataProvider = jsonServerProvider('http://localhost:9090', httpClient);
 
 const App = () => (
     <Admin
+        disableTelemetry
         // menu={Menu}
         layout={Layout}
         customRoutes={customRoutes}
