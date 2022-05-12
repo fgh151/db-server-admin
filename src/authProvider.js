@@ -1,6 +1,6 @@
 const authProvider = {
     login: ({email, password}) =>  {
-        const request = new Request('http://localhost:9090/admin/auth', {
+        const request = new Request( process.env.REACT_APP_SERVER_SCHEMA+'://' +process.env.REACT_APP_SERVER_URL+'/admin/auth', {
             method: 'POST',
             body: JSON.stringify({ email: email, password: password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),
