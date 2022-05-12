@@ -30,7 +30,7 @@ const httpClient = (url, options = {}) => {
     return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = jsonServerProvider(process.env.REACT_APP_SERVER_SCHEMA+'://' +process.env.REACT_APP_SERVER_URL, httpClient);
+const dataProvider = jsonServerProvider(window._env_.REACT_APP_SERVER_SCHEMA+'://'+window._env_.REACT_APP_SERVER_URL, httpClient);
 
 const App = () => (
     <Admin

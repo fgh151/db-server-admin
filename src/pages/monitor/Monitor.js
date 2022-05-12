@@ -7,7 +7,7 @@ import MonitorTable from "./MonitorTable";
 
 const Monitor = () => {
 
-    const db = new Db(process.env.REACT_APP_SERVER_SCHEMA, process.env.REACT_APP_SERVER_URL, 'test', 123)
+    const db = new Db(window._env_.REACT_APP_SERVER_SCHEMA, window._env_.REACT_APP_SERVER_URL, 'test', 123)
     const [loading, setLoading] = useState(true);
     const [list, setList] = useState(true);
 

@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Docker compose example
+
+```yaml
+version: "3.2"
+services:
+  app:
+    image: fgh151/db-server-admin:0.0.1
+    ports:
+      - "5000:80"
+    environment:
+      - "REACT_APP_SERVER_SCHEMA=http"
+      - "REACT_APP_SERVER_URL=localhost:9090"
+```
