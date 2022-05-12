@@ -1,50 +1,36 @@
 import * as React from "react";
-
-import {Edit, FormWithRedirect, required, SaveButton, TextInput} from 'react-admin';
-import {Box, Toolbar} from '@material-ui/core';
+import {Edit, required, SimpleForm, TextInput} from 'react-admin';
+import {Box} from '@material-ui/core';
 
 export const EditConfig = (props) => (
     <Edit {...props}>
-        <FormWithRedirect
-            {...props}
-            render={formProps => (
-                // here starts the custom form layout
-                <form>
-                    <Box p="1em">
+        <SimpleForm>
+            <Box p="1em">
+                <Box display="flex">
+                    <Box flex={2} mr="1em">
                         <Box display="flex">
-                            <Box flex={2} mr="1em">
-                                <Box display="flex">
-                                    <Box flex={1} mr="0.5em">
-                                        <TextInput source="title" validate={required()} fullWidth/>
-                                    </Box>
-                                </Box>
-                                <Box mt="1em"/>
-                                <TextInput
-                                    fullWidth
-                                    multiline={true}
-                                    minRows={10}
-                                    component='pre'
-                                    source="body"
-                                    // format={(s, d)=> JSON.stringify(s, undefined, 2)}
-                                    validate={required()}
-                                />
-                            </Box>
-
-                            <Box flex={1} ml="1em">
-                                <TextInput source="project_id" validate={required()} fullWidth/>
+                            <Box flex={1} mr="0.5em">
+                                <TextInput source="title" validate={required()} fullWidth name='title'/>
                             </Box>
                         </Box>
+                        <Box mt="1em"/>
+                        <TextInput
+                            name='body'
+                            fullWidth
+                            multiline={true}
+                            minRows={10}
+                            component='pre'
+                            source="body"
+                            // format={(s, d)=> JSON.stringify(s, undefined, 2)}
+                            validate={required()}
+                        />
                     </Box>
-                    <Toolbar>
-                        <Box display="flex" justifyContent="space-between" width="100%">
-                            <SaveButton
-                                saving={formProps.saving}
-                                handleSubmitWithRedirect={formProps.handleSubmitWithRedirect}
-                            />
-                        </Box>
-                    </Toolbar>
-                </form>
-            )}
-        />
+
+                    <Box flex={1} ml="1em">
+                        <TextInput source="project_id" name='project_id' validate={required()} fullWidth/>
+                    </Box>
+                </Box>
+            </Box>
+        </SimpleForm>
     </Edit>
 );
