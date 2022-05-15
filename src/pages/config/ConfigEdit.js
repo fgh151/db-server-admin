@@ -15,7 +15,7 @@ export const EditConfig = (props) => (
                             </Box>
                         </Box>
                         <Box mt="1em"/>
-                        <CodeMirror source="body"/>
+                        <CodeMirror source="body" name='body'/>
                     </Box>
                     <Box flex={1} ml="1em">
                         <TextInput source="project_id" name='project_id' validate={required()} fullWidth/>
