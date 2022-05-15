@@ -23,7 +23,11 @@ do
   [[ -z $value ]] && value=${varvalue}
 
   # Append configuration property to JS file
-  echo "  $varname: \"$value\"," >> ./env-config.js
+  # Without comments
+  if [[ $varname != \#* ]] ;
+  then
+    echo "  $varname: \"$value\"," >> ./env-config.js
+  fi
 done < .env.local
 
 echo "}" >> ./env-config.js
