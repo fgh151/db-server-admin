@@ -1,11 +1,23 @@
 import * as React from "react";
-import {Edit, required, SimpleForm, TextInput} from 'react-admin';
-import {Box} from '@material-ui/core';
+import {Edit, required, SimpleForm, TextInput, SaveButton, DeleteButton} from 'react-admin';
+import {Box, Toolbar} from '@material-ui/core';
 import CodeMirror from "../../components/CodeMirror";
+
+const MyToolbar = props => (
+    <Toolbar {...props}>
+        <div style={{display: 'flex', flex: 1, justifyContent: 'space-between'}}>
+            <SaveButton alwaysEnable/>
+            <DeleteButton/>
+        </div>
+    </Toolbar>
+);
 
 export const EditConfig = (props) => (
     <Edit {...props}>
-        <SimpleForm>
+        <SimpleForm
+            toolbar={<MyToolbar/>}
+
+        >
             <Box p="1em">
                 <Box display="flex">
                     <Box flex={2} mr="1em">
