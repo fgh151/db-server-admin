@@ -8,6 +8,7 @@ export const EditCf = (props) => (
             <TextInput source="title" validate={required()}/>
             <TextInput source="container" validate={required()}/>
             <TextInput source="params"/>
+            <TextInput source="project_id" validate={required()}/>
         </SimpleForm>
     </Edit>
 );
