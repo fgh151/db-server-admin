@@ -17,6 +17,8 @@ import {EditDs} from "./pages/ds/DsEdit";
 import {DsList} from "./pages/ds/list";
 import {Route} from "react-router-dom";
 import Monitor from "./pages/monitor/Monitor";
+import {CfCreate} from "./pages/cf/CfCreate";
+import {EditCf} from "./pages/cf/CfEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -67,6 +69,13 @@ const App = () => (
             options={{label: 'Configs'}}
             create={DsCreate}
             edit={EditDs}
+        />
+        <Resource
+            name="admin/cf"
+            list={CfList}
+            options={{label: 'Functions'}}
+            create={CfCreate}
+            edit={EditCf}
         />
         <CustomRoutes>
             <Route exact path="/monitor" element={<Monitor />} />
