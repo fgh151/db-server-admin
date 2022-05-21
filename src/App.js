@@ -20,6 +20,7 @@ import Monitor from "./pages/monitor/Monitor";
 import {CfCreate} from "./pages/cf/CfCreate";
 import {EditCf} from "./pages/cf/CfEdit";
 import {CfList} from "./pages/cf/list";
+import {LogList} from "./pages/cf/logs";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -78,7 +79,10 @@ const App = () => (
             create={CfCreate}
             edit={EditCf}
         />
+
         <CustomRoutes>
+             <Route exact path="/log/cf/:id" element={<LogList />} render={(routeProps) => <LogList resource="logs" {...routeProps} />} />
+
             <Route exact path="/monitor" element={<Monitor />} />
         </CustomRoutes>
     </Admin>
