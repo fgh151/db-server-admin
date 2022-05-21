@@ -19,6 +19,7 @@ import {Route} from "react-router-dom";
 import Monitor from "./pages/monitor/Monitor";
 import {CfCreate} from "./pages/cf/CfCreate";
 import {EditCf} from "./pages/cf/CfEdit";
+import {CfList} from "./pages/cf/list";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
