@@ -1,17 +1,24 @@
 import * as React from "react";
-import { List, Datagrid, TextField, FunctionField } from 'react-admin';
+import {List, Datagrid, TextField, FunctionField, EditButton} from 'react-admin';
 import {Link} from "react-router-dom";
+import ListIcon from '@material-ui/icons/List';
 
 export const CfList = props => {
     return (<List {...props}>
         <Datagrid>
-            <FunctionField render={(p) => {
-                return (<Link to={`/admin/cf/${p.id}`} title="fff">{p.id}</Link>)
-            }} />
+            <TextField source="id"/>
             <TextField source="title"/>
             <FunctionField render={(p) => {
-                return (<Link to={`/log/cf/${p.id}`} title="fff"> logs</Link>)
-            }} />
+                return (
+                    <Link
+                        className='MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root css-1or4sgo-MuiButtonBase-root-MuiButton-root-RaButton-root'
+                        to={`/log/cf/${p.id}`} title="fff"
+                    >
+                       <ListIcon /> logs
+                    </Link>
+                )
+            }}/>
+            <EditButton/>
         </Datagrid>
     </List>);
 }
