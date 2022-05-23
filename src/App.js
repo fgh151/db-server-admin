@@ -1,6 +1,5 @@
 import * as React from "react";
-import jsonServerProvider from 'ra-data-json-server';
-import {Admin, fetchUtils, Resource, localStorageStore, CustomRoutes} from 'react-admin';
+import {Admin, CustomRoutes, localStorageStore, Resource} from 'react-admin';
 import {TopicCreate} from "./pages/topic/TopicCreate";
 import {TopicEdit} from "./pages/topic/TopicEdit";
 import AuthProvider from "./authProvider";
@@ -21,20 +20,10 @@ import {CfCreate} from "./pages/cf/CfCreate";
 import {EditCf} from "./pages/cf/CfEdit";
 import {CfList} from "./pages/cf/list";
 import {LogList} from "./pages/cf/logs";
+import {dataProvider} from "./utils/http";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
-
-const httpClient = (url, options = {}) => {
-    if (!options.headers) {
-        options.headers = new Headers({ Accept: 'application/json' });
-    }
-    const token = localStorage.getItem('token');
-    options.headers.set('Authorization', `Bearer ${token}`);
-    return fetchUtils.fetchJson(url, options);
-};
-
-const dataProvider = jsonServerProvider(window._env_.REACT_APP_SERVER_SCHEMA+'://'+window._env_.REACT_APP_SERVER_URL, httpClient);
 
 const App = () => (
     <Admin
