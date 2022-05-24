@@ -9,7 +9,7 @@ import {request} from "../../utils/http";
 const RunButton = (params) => {
 
     const runAction = () => {
-        request.runCf(params.functionId)
+        request.runCf(params.function.id)
     }
 
     return (
@@ -17,7 +17,7 @@ const RunButton = (params) => {
             className='MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root css-1or4sgo-MuiButtonBase-root-MuiButton-root-RaButton-root'
             onClick={() => runAction()}
         >
-            <PlayCircleOutlineIcon/> Run
+            <PlayCircleOutlineIcon/> Run ({params.function.run_count})
         </Button>
     )
 }
@@ -31,7 +31,7 @@ export const CfList = props => {
 
             <FunctionField render={(p) => {
                 return (
-                    <RunButton functionId={p.id}/>
+                    <RunButton function={p}/>
                 )
             }}/>
 
