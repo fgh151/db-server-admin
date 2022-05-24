@@ -9,8 +9,7 @@ import {request} from "../../utils/http";
 const RunButton = (params) => {
 
     const runAction = () => {
-        console.log(params)
-        console.log(request.runCf(params.functionId))
+        request.runCf(params.functionId)
     }
 
     return (

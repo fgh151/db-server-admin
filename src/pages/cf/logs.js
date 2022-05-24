@@ -13,13 +13,13 @@ export const LogList = props => {
     return (
         <div>
             <Breadcrumbs aria-label="breadcrumb">
-                <Link underline="hover" color="inherit" href='/admin/cf/'>
+                <Link underline="hover" color="inherit" href='/#/admin/cf/'>
                     Functions
                 </Link>
                 <Link
                     underline="hover"
                     color="inherit"
-                    href={`/admin/cf/${id}`}
+                    href={`/#/admin/cf/${id}`}
                 >
                     {id}
                 </Link>
