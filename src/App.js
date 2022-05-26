@@ -21,6 +21,9 @@ import {EditCf} from "./pages/cf/CfEdit";
 import {CfList} from "./pages/cf/list";
 import {LogList} from "./pages/cf/logs";
 import {dataProvider} from "./utils/http";
+import {PushList} from "./pages/push/list";
+import {PushCreate} from "./pages/push/PushCreate";
+import {EditPush} from "./pages/push/CfEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -67,6 +70,13 @@ const App = () => (
             options={{label: 'Functions'}}
             create={CfCreate}
             edit={EditCf}
+        />
+        <Resource
+            name="admin/push"
+            list={PushList}
+            options={{label: 'Push'}}
+            create={PushCreate}
+            edit={EditPush}
         />
 
         <CustomRoutes>
