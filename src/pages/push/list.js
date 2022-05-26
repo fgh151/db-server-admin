@@ -28,9 +28,7 @@ export const PushList = props => {
             <TextField source="title"/>
 
             <FunctionField render={(p) => {
-
-                return p.sent ? '<span>Sent</span>' : <RunButton push={p}/>
-
+                return p.sent ? <div>Sent</div> : <RunButton push={p}/>
             }}/>
 
             <EditButton/>
