@@ -3,6 +3,7 @@ import {Datagrid, EditButton, FunctionField, List, TextField} from 'react-admin'
 import {Button} from "@material-ui/core";
 import PlayCircleOutlineIcon from '@material-ui/icons//PlayCircleOutline';
 import {request} from "../../utils/http";
+import moment from "moment";
 
 const RunButton = (params) => {
 
@@ -28,7 +29,11 @@ export const PushList = props => {
             <TextField source="title"/>
 
             <FunctionField render={(p) => {
-                return p.sent ? <div>Sent</div> : <RunButton push={p}/>
+                console.log(p)
+
+                const format = moment(p.sent_at).format('DD-MM-YYYY')
+
+                return p.sent ? <div>Sent ({format})</div> : <RunButton push={p}/>
             }}/>
 
             <EditButton/>
