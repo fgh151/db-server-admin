@@ -24,6 +24,9 @@ import {dataProvider} from "./utils/http";
 import {PushList} from "./pages/push/list";
 import {PushCreate} from "./pages/push/PushCreate";
 import {EditPush} from "./pages/push/CfEdit";
+import {CronList} from "./pages/cron/list";
+import {CronCreate} from "./pages/cron/CronCreate";
+import {EditCron} from "./pages/cron/CronEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -77,6 +80,13 @@ const App = () => (
             options={{label: 'Push'}}
             create={PushCreate}
             edit={EditPush}
+        />
+        <Resource
+            name="admin/cron"
+            list={CronList}
+            options={{label: 'Cron'}}
+            create={CronCreate}
+            edit={EditCron}
         />
 
         <CustomRoutes>

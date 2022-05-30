@@ -7,6 +7,7 @@ import CallMerge from '@material-ui/icons/CallMerge';
 import FunctionsIcon from '@material-ui/icons/Functions';
 import InboxIcon from '@material-ui/icons/Inbox';
 import SettingsApplications from '@material-ui/icons/SettingsApplications'
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 
 const MainMenu = (props) => (
     <Menu {...props}>
@@ -17,6 +18,7 @@ const MainMenu = (props) => (
         <MenuItemLink to="/admin/ds" primaryText="Data sources" leftIcon={<CallMerge />}/>
         <MenuItemLink to="/admin/cf" primaryText="functions" leftIcon={<FunctionsIcon />}/>
         <MenuItemLink to="/admin/push" primaryText="push" leftIcon={<InboxIcon />}/>
+        <MenuItemLink to="/admin/cron" primaryText="cron" leftIcon={<AccessTimeIcon />}/>
         <MenuItemLink to="/monitor" primaryText="Monitor" leftIcon={<LabelIcon />}/>
     </Menu>
 );
