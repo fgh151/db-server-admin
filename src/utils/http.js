@@ -9,15 +9,53 @@ const httpClient = (url, options = {}) => {
     options.headers.set('Authorization', `Bearer ${token}`);
     return fetchUtils.fetchJson(url, options);
 };
-export const dataProvider = jsonServerProvider(window._env_.REACT_APP_SERVER_SCHEMA + '://' + window._env_.REACT_APP_SERVER_URL, httpClient);
+
+const apiUrl = window._env_.REACT_APP_SERVER_SCHEMA + '://' + window._env_.REACT_APP_SERVER_URL;
+
+const srp = jsonServerProvider(apiUrl, httpClient);
+
+
+export const dataProvider = {
+    ...srp,
+    update: (resource, params) => {
+
+        if (resource !== 'admin/cf') {
+            return srp.update(resource, params);
+        }
+
+        const formData = new FormData();
+        for (const name in params.data) {
+            formData.set(name, params.data[name]);
+        }
+
+        formData.append("dockerarc", params.data['dockerarc'].rawFile);
+
+        return httpClient(
+            `${apiUrl}/${resource}/${params.id}`,
+            {
+                method: 'PUT',
+                body: formData,
+            })
+            .then(({json}) => ({data: json}));
+    }
+}
 
 export const request = {
     runCf: (id) => {
-        return httpClient(`${window._env_.REACT_APP_SERVER_SCHEMA}://${window._env_.REACT_APP_SERVER_URL}/api/cf/${id}/run`, { method: 'GET' })
+        return httpClient(`${apiUrl}/api/cf/${id}/run`, {method: 'GET'})
             .then(response => response.json());
     },
     runPush: (id) => {
-        return httpClient(`${window._env_.REACT_APP_SERVER_SCHEMA}://${window._env_.REACT_APP_SERVER_URL}/api/push/${id}/run`, { method: 'GET' })
+        return httpClient(`${apiUrl}/api/push/${id}/run`, {method: 'GET'})
             .then(response => response.json());
     },
 }
+
+const convertFileToBase64 = file =>
+    new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+
+        reader.readAsDataURL(file.rawFile);
+    });
