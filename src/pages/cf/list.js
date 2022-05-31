@@ -4,12 +4,12 @@ import {Link} from "react-router-dom";
 import ListIcon from '@material-ui/icons/List';
 import {Button} from "@material-ui/core";
 import PlayCircleOutlineIcon from '@material-ui/icons//PlayCircleOutline';
-import {request} from "../../utils/http";
+import {dataProvider} from "../../utils/http";
 
 const RunButton = (params) => {
 
     const runAction = () => {
-        request.runCf(params.function.id)
+        dataProvider.runCf(params.function.id)
     }
 
     return (

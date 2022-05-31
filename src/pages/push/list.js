@@ -2,13 +2,13 @@ import * as React from "react";
 import {Datagrid, EditButton, FunctionField, List, TextField} from 'react-admin';
 import {Button} from "@material-ui/core";
 import PlayCircleOutlineIcon from '@material-ui/icons//PlayCircleOutline';
-import {request} from "../../utils/http";
+import {dataProvider,} from "../../utils/http";
 import moment from "moment";
 
 const RunButton = (params) => {
 
     const runAction = () => {
-        request.runPush(params.push.id)
+        dataProvider.runPush(params.push.id)
     }
 
     return (

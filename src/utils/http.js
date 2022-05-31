@@ -14,7 +14,6 @@ const apiUrl = window._env_.REACT_APP_SERVER_SCHEMA + '://' + window._env_.REACT
 
 const srp = jsonServerProvider(apiUrl, httpClient);
 
-
 export const dataProvider = {
     ...srp,
     update: (resource, params) => {
@@ -37,10 +36,7 @@ export const dataProvider = {
                 body: formData,
             })
             .then(({json}) => ({data: json}));
-    }
-}
-
-export const request = {
+    },
     runCf: (id) => {
         return httpClient(`${apiUrl}/api/cf/${id}/run`, {method: 'GET'})
             .then(response => response.json());
@@ -50,12 +46,3 @@ export const request = {
             .then(response => response.json());
     },
 }
-
-const convertFileToBase64 = file =>
-    new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
-
-        reader.readAsDataURL(file.rawFile);
-    });
