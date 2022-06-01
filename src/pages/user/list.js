@@ -1,5 +1,5 @@
 import * as React from "react";
-import {List, Datagrid, TextField, BooleanField, DateField} from 'react-admin';
+import {List, Datagrid, TextField, BooleanField, DateField, FunctionField} from 'react-admin';
 
 export const UserList = props => {
     return (<List {...props}>
@@ -10,6 +10,9 @@ export const UserList = props => {
             <BooleanField source="active" />
             <TextField source="token"/>
             <DateField source="lastLogin" showTime={true} />
+             <FunctionField label='Devices'  render={(p) => {
+                 return p.devices.map((device, i) => <div key={i}>{device.device}</div>)
+            }}/>
         </Datagrid>
     </List>);
 }
