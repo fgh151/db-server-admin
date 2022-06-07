@@ -18,6 +18,7 @@ export const UserList = props => {
             <BooleanField source="active"/>
             <TextField source="token"/>
             <DateField source="last_login" showTime={true}/>
+            <DateField source="created_at" showTime={false}/>
             <FunctionField label='Devices' render={(p) => {
                 return p.devices.map((device, i) => <Device key={i} device={device.device}/>)
             }}/>
