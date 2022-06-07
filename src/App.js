@@ -41,6 +41,7 @@ const App = () => (
         dataProvider={dataProvider}
         authProvider={AuthProvider}
         store={store}
+        requireAuth
     >
         <Resource
             name="admin/topics"
