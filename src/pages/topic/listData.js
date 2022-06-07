@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom"
 import {Breadcrumbs} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Link from '@mui/material/Link';
+import ReactJson from "react-json-view";
 
 export const ListData = props => {
     const {id} = useParams();
@@ -25,9 +26,8 @@ export const ListData = props => {
             </Breadcrumbs>
             <List {...props} resource={`/admin/topics/${name}/data`}>
                 <Datagrid>
-                    <TextField source="id"/>
                     <FunctionField label="data" render={(p) => {
-                        return <div>{JSON.stringify(p)}</div>
+                        return <ReactJson src={p} />
                     }}/>
                 </Datagrid>
             </List>
