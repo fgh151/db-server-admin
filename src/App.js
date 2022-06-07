@@ -1,3 +1,5 @@
+import "./App.css"
+
 import * as React from "react";
 import {Admin, CustomRoutes, localStorageStore, Resource} from 'react-admin';
 import {TopicCreate} from "./pages/topic/TopicCreate";
