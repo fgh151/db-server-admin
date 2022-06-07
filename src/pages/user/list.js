@@ -1,15 +1,23 @@
 import * as React from "react";
-import {List, Datagrid, TextField, BooleanField, DateField, FunctionField} from 'react-admin';
+import {List, Datagrid, TextField, BooleanField, DateField, FunctionField, TextInput, BooleanInput} from 'react-admin';
+
+const userFilters = [
+    <TextInput label="Search by id" source="id"  />,
+    <BooleanInput source="admin"  />,
+    <BooleanInput source="active"  />,
+    <TextInput label="Email" source="email" />,
+];
+
 
 export const UserList = props => {
-    return (<List {...props}>
+    return (<List {...props}  filters={userFilters}>
         <Datagrid rowClick="edit">
             <TextField source="id"/>
             <TextField source="email"/>
             <BooleanField source="admin"/>
             <BooleanField source="active"/>
             <TextField source="token"/>
-            <DateField source="lastLogin" showTime={true}/>
+            <DateField source="last_login" showTime={true}/>
             <FunctionField label='Devices' render={(p) => {
                 return p.devices.map((device, i) => <Device key={i} device={device.device}/>)
             }}/>
