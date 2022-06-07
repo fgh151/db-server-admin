@@ -10,12 +10,22 @@ const darkTheme = createTheme({
     palette: {mode: 'dark'},
 });
 
-const MainMonitor = (props) =>
-    <Layout
-        {...props}
-        menu={MainMenu}
-        appBar={MyAppBar}
-    />;
+const MainMonitor = (props) => {
+    return (
+        <Layout
+            {...props}
+            menu={MainMenu}
+            appBar={MyAppBar}
+        >
+            {props.children}
+            <footer className='app-footer'>
+                <div className='copyright'>
+                &copy; {new Date().getFullYear()} <a href='https://openitstudio.ru' target='_blank' rel="noreferrer">OpenItStudio</a>
+                    </div>
+            </footer>
+        </Layout>
+    );
+}
 
 
 const useStyles = makeStyles({
