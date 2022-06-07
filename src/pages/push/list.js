@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Datagrid, EditButton, FunctionField, List, TextField} from 'react-admin';
 import {Button} from "@material-ui/core";
-import PlayCircleOutlineIcon from '@material-ui/icons//PlayCircleOutline';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import {dataProvider,} from "../../utils/http";
 import moment from "moment";
 

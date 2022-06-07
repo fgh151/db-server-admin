@@ -27,6 +27,7 @@ import {EditPush} from "./pages/push/CfEdit";
 import {CronList} from "./pages/cron/list";
 import {CronCreate} from "./pages/cron/CronCreate";
 import {EditCron} from "./pages/cron/CronEdit";
+import {ListData} from "./pages/topic/listData";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -91,6 +92,7 @@ const App = () => (
 
         <CustomRoutes>
              <Route exact path="/log/cf/:id" element={<LogList />} render={(routeProps) => <LogList resource="logs" {...routeProps} />} />
+             <Route exact path="/topic/data/:id/:name" element={<ListData />} render={(routeProps) => <ListData resource="em" {...routeProps} />} />
 
             <Route exact path="/monitor" element={<Monitor />} />
         </CustomRoutes>
