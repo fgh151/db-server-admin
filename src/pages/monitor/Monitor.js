@@ -2,12 +2,11 @@ import React, {useEffect, useState} from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import {Title, Loading} from 'react-admin';
-import Db from "./db";
-import MonitorTable from "./MonitorTable";
+import {httpClient, apiUrl} from "../../utils/http"
+import Row from "./Row";
 
 const Monitor = () => {
 
-    const db = new Db(window._env_.REACT_APP_SERVER_SCHEMA, window._env_.REACT_APP_SERVER_URL, 'logbook', 123)
     const [loading, setLoading] = useState(true);
     const [list, setList] = useState(true);
 
@@ -18,15 +17,14 @@ const Monitor = () => {
 
     const fetchData = () => {
 
-        db.list()
-            .then((response) => {
-
-                response.json()
-                    .then((j) => {
-                        setList(j)
-                        setLoading(false)
-                    })
-            })
+        if (loading) {
+            httpClient(`${apiUrl}/admin/topics?_end=10&_order=ASC&_sort=id&_start=0`, {method: 'GET'})
+                .then((response) => {
+                    const l = JSON.parse(response.body);
+                    setList(l)
+                    setLoading(false)
+                });
+        }
     }
 
     return (
@@ -35,7 +33,7 @@ const Monitor = () => {
             <CardContent>
                 {loading ?
                     <Loading loadingPrimary="app.page.loading" loadingSecondary="app.message.loading"/>
-                    : <MonitorTable items={list}/>}
+                    : list.map((item, i) => <Row key={i} item={item}/>)}
             </CardContent>
         </Card>
     );

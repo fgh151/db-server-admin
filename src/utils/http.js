@@ -1,7 +1,7 @@
 import jsonServerProvider from "ra-data-json-server";
 import {fetchUtils} from "react-admin";
 
-const httpClient = (url, options = {}) => {
+export const httpClient = (url, options = {}) => {
     if (!options.headers) {
         options.headers = new Headers({Accept: 'application/json'});
     }
@@ -10,7 +10,7 @@ const httpClient = (url, options = {}) => {
     return fetchUtils.fetchJson(url, options);
 };
 
-const apiUrl = window._env_.REACT_APP_SERVER_SCHEMA + '://' + window._env_.REACT_APP_SERVER_URL;
+export const apiUrl = window._env_.REACT_APP_SERVER_SCHEMA + '://' + window._env_.REACT_APP_SERVER_URL;
 
 const srp = jsonServerProvider(apiUrl, httpClient);
 
