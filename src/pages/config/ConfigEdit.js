@@ -1,5 +1,14 @@
 import * as React from "react";
-import {Edit, required, SimpleForm, TextInput, SaveButton, DeleteButton} from 'react-admin';
+import {
+    Edit,
+    required,
+    SimpleForm,
+    TextInput,
+    SaveButton,
+    DeleteButton,
+    ReferenceInput,
+    SelectInput
+} from 'react-admin';
 import {Box, Toolbar} from '@material-ui/core';
 import CodeMirror from "../../components/CodeMirror";
 
@@ -30,7 +39,9 @@ export const EditConfig = (props) => (
                         <CodeMirror source="body" name='body'/>
                     </Box>
                     <Box flex={1} ml="1em">
-                        <TextInput source="project_id" name='project_id' validate={required()} fullWidth/>
+                        <ReferenceInput label="Project" source="project_id" reference="admin/topics">
+                            <SelectInput optionText="topic" validate={required()}/>
+                        </ReferenceInput>
                     </Box>
                 </Box>
             </Box>
