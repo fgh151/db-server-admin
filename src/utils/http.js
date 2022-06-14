@@ -27,7 +27,9 @@ export const dataProvider = {
             formData.set(name, params.data[name]);
         }
 
-        formData.append("dockerarc", params.data['dockerarc'].rawFile);
+        if (params.data['dockerarc'].rawFile) {
+            formData.append("dockerarc", params.data['dockerarc'].rawFile);
+        }
 
         return httpClient(
             `${apiUrl}/${resource}/${params.id}`,
