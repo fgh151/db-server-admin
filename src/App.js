@@ -30,6 +30,9 @@ import {CronList} from "./pages/cron/list";
 import {CronCreate} from "./pages/cron/CronCreate";
 import {EditCron} from "./pages/cron/CronEdit";
 import {ListData} from "./pages/topic/listData";
+import {DseList} from "./pages/dse/list";
+import {DseCreate} from "./pages/dse/DseCreate";
+import {DseEdit} from "./pages/dse/DseEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -67,7 +70,7 @@ const App = () => (
         <Resource
             name="admin/ds"
             list={DsList}
-            options={{label: 'Configs'}}
+            options={{label: 'Data sources'}}
             create={DsCreate}
             edit={EditDs}
         />
@@ -94,6 +97,10 @@ const App = () => (
         />
 
         <CustomRoutes>
+             <Route exact path="/admin/ds/dse/:dsId" element={<DseList />} render={(routeProps) => <DseList resource="admin/ds/dse/:dsId" {...routeProps} />} />
+             <Route exact path="/admin/ds/dse/:dsId/:id" element={<DseEdit />} render={(routeProps) => <DseEdit resource="admin/ds/dse/:dsId/:id" {...routeProps} />} />
+             <Route exact path="/admin/ds/dse/:dsId/create" element={<DseCreate />} render={(routeProps) => <DseCreate resource="admin/ds/dse/:dsId" {...routeProps} />} />
+
              <Route exact path="/log/cf/:id" element={<LogList />} render={(routeProps) => <LogList resource="logs" {...routeProps} />} />
              <Route exact path="/topic/data/:id/:name" element={<ListData />} render={(routeProps) => <ListData resource="em" {...routeProps} />} />
 
