@@ -9,7 +9,7 @@ import ReactJson from "react-json-view";
 
 const Row = (props) => {
 
-    const [content, setContent] = useState(true);
+    const [content, setContent] = useState({});
     const [loaded, setLoaded] = useState(true);
 
     useEffect(() => {

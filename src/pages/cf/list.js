@@ -3,7 +3,7 @@ import {List, Datagrid, TextField, FunctionField, EditButton} from 'react-admin'
 import {Link} from "react-router-dom";
 import ListIcon from '@material-ui/icons/List';
 import {Button} from "@material-ui/core";
-import PlayCircleOutlineIcon from '@material-ui/icons//PlayCircleOutline';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import {dataProvider} from "../../utils/http";
 
 const RunButton = (params) => {

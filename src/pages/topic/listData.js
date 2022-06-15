@@ -1,5 +1,5 @@
 import * as React from "react";
-import {List, Datagrid, TextField, FunctionField} from 'react-admin';
+import {List, Datagrid, FunctionField} from 'react-admin';
 import {useParams} from "react-router-dom"
 import {Breadcrumbs} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
