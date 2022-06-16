@@ -8,6 +8,7 @@ import FunctionsIcon from '@material-ui/icons/Functions';
 import InboxIcon from '@material-ui/icons/Inbox';
 import SettingsApplications from '@material-ui/icons/SettingsApplications'
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import AltRouteIcon from '@mui/icons-material/AltRoute';
 
 const MainMenu = (props) => (
     <Menu {...props}>
@@ -19,6 +20,7 @@ const MainMenu = (props) => (
         <MenuItemLink to="/admin/cf" primaryText="functions" leftIcon={<FunctionsIcon />}/>
         <MenuItemLink to="/admin/push" primaryText="push" leftIcon={<InboxIcon />}/>
         <MenuItemLink to="/admin/cron" primaryText="cron" leftIcon={<AccessTimeIcon />}/>
+        <MenuItemLink to="/admin/pl" primaryText="Pipelines" leftIcon={<AltRouteIcon />}/>
         <MenuItemLink to="/monitor" primaryText="Monitor" leftIcon={<LabelIcon />}/>
     </Menu>
 );

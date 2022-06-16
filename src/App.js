@@ -33,6 +33,9 @@ import {ListData} from "./pages/topic/listData";
 import {DseList} from "./pages/dse/list";
 import {DseCreate} from "./pages/dse/DseCreate";
 import {DseEdit} from "./pages/dse/DseEdit";
+import {PipelineList} from "./pages/pl/list";
+import {PlCreate} from "./pages/pl/PlCreate";
+import {EditPipeline} from "./pages/pl/PlEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -80,6 +83,13 @@ const App = () => (
             options={{label: 'Functions'}}
             create={CfCreate}
             edit={EditCf}
+        />
+        <Resource
+            name="admin/pl"
+            list={PipelineList}
+            options={{label: 'Pipelines'}}
+            create={PlCreate}
+            edit={EditPipeline}
         />
         <Resource
             name="admin/push"
