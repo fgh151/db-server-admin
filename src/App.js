@@ -1,7 +1,7 @@
 import "./App.css"
 
 import * as React from "react";
-import {Admin, CustomRoutes, localStorageStore, Resource} from 'react-admin';
+import {Admin, CustomRoutes, localStorageStore, Resource, Authenticated} from 'react-admin';
 import {TopicCreate} from "./pages/topic/TopicCreate";
 import {TopicEdit} from "./pages/topic/TopicEdit";
 import AuthProvider from "./authProvider";
@@ -36,86 +36,98 @@ import {DseEdit} from "./pages/dse/DseEdit";
 import {PipelineList} from "./pages/pl/list";
 import {PlCreate} from "./pages/pl/PlCreate";
 import {EditPipeline} from "./pages/pl/PlEdit";
+import LoginPage from "./pages/auth/Login";
+import OAuth from "./pages/auth/OAuth";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
 
 const App = () => (
     <Admin
+        loginPage={LoginPage}
         disableTelemetry
         layout={Layout}
         dataProvider={dataProvider}
         authProvider={AuthProvider}
         store={store}
-        requireAuth
+        // requireAuth
     >
-        <Resource
-            name="admin/topics"
-            list={TopicsList}
-            options={{label: 'Topics'}}
-            create={TopicCreate}
-            edit={TopicEdit}
-        />
-        <Resource
-            name="admin/users"
-            list={UserList}
-            options={{label: 'Admins'}}
-            create={CreateUser}
-            edit={EditUser}
-        />
-        <Resource
-            name="admin/config"
-            list={ConfigList}
-            options={{label: 'Configs'}}
-            create={ConfigCreate}
-            edit={EditConfig}
-        />
-        <Resource
-            name="admin/ds"
-            list={DsList}
-            options={{label: 'Data sources'}}
-            create={DsCreate}
-            edit={EditDs}
-        />
-        <Resource
-            name="admin/cf"
-            list={CfList}
-            options={{label: 'Functions'}}
-            create={CfCreate}
-            edit={EditCf}
-        />
-        <Resource
-            name="admin/pl"
-            list={PipelineList}
-            options={{label: 'Pipelines'}}
-            create={PlCreate}
-            edit={EditPipeline}
-        />
-        <Resource
-            name="admin/push"
-            list={PushList}
-            options={{label: 'Push'}}
-            create={PushCreate}
-            edit={EditPush}
-        />
-        <Resource
-            name="admin/cron"
-            list={CronList}
-            options={{label: 'Cron'}}
-            create={CronCreate}
-            edit={EditCron}
-        />
-
+        <Authenticated>
+            <Resource
+                name="admin/topics"
+                list={TopicsList}
+                options={{label: 'Topics'}}
+                create={TopicCreate}
+                edit={TopicEdit}
+            />
+            <Resource
+                name="admin/users"
+                list={UserList}
+                options={{label: 'Admins'}}
+                create={CreateUser}
+                edit={EditUser}
+            />
+            <Resource
+                name="admin/config"
+                list={ConfigList}
+                options={{label: 'Configs'}}
+                create={ConfigCreate}
+                edit={EditConfig}
+            />
+            <Resource
+                name="admin/ds"
+                list={DsList}
+                options={{label: 'Data sources'}}
+                create={DsCreate}
+                edit={EditDs}
+            />
+            <Resource
+                name="admin/cf"
+                list={CfList}
+                options={{label: 'Functions'}}
+                create={CfCreate}
+                edit={EditCf}
+            />
+            <Resource
+                name="admin/pl"
+                list={PipelineList}
+                options={{label: 'Pipelines'}}
+                create={PlCreate}
+                edit={EditPipeline}
+            />
+            <Resource
+                name="admin/push"
+                list={PushList}
+                options={{label: 'Push'}}
+                create={PushCreate}
+                edit={EditPush}
+            />
+            <Resource
+                name="admin/cron"
+                list={CronList}
+                options={{label: 'Cron'}}
+                create={CronCreate}
+                edit={EditCron}
+            />
+        </Authenticated>
         <CustomRoutes>
-             <Route exact path="/admin/ds/dse/:dsId" element={<DseList />} render={(routeProps) => <DseList resource="admin/ds/dse/:dsId" {...routeProps} />} />
-             <Route exact path="/admin/ds/dse/:dsId/:id" element={<DseEdit />} render={(routeProps) => <DseEdit resource="admin/ds/dse/:dsId/:id" {...routeProps} />} />
-             <Route exact path="/admin/ds/dse/:dsId/create" element={<DseCreate />} render={(routeProps) => <DseCreate resource="admin/ds/dse/:dsId" {...routeProps} />} />
-
-             <Route exact path="/log/cf/:id" element={<LogList />} render={(routeProps) => <LogList resource="logs" {...routeProps} />} />
-             <Route exact path="/topic/data/:id/:name" element={<ListData />} render={(routeProps) => <ListData resource="em" {...routeProps} />} />
-
-            <Route exact path="/monitor" element={<Monitor />} />
+            <Route exact path="/admin/ds/dse/:dsId" element={<DseList/>}
+                   render={(routeProps) => <DseList resource="admin/ds/dse/:dsId" {...routeProps} />}/>
+            <Route exact path="/admin/ds/dse/:dsId/:id" element={<DseEdit/>}
+                   render={(routeProps) => <DseEdit resource="admin/ds/dse/:dsId/:id" {...routeProps} />}/>
+            <Route exact path="/admin/ds/dse/:dsId/create" element={<DseCreate/>}
+                   render={(routeProps) => <DseCreate resource="admin/ds/dse/:dsId" {...routeProps} />}/>
+            <Route exact path="/log/cf/:id" element={<LogList/>}
+                   render={(routeProps) => <LogList resource="logs" {...routeProps} />}/>
+            <Route exact path="/topic/data/:id/:name" element={<ListData/>}
+                   render={(routeProps) => <ListData resource="em" {...routeProps} />}/>
+            <Route exact path="/monitor" element={<Monitor/>}/>
         </CustomRoutes>
+        <CustomRoutes noLayout>
+            <Route exact path="/oauth/:provider" render={(routerProps) => <OAuth {...routerProps} />}
+                   element={<OAuth/>}/>
+        </CustomRoutes>
+
     </Admin>
 );
 
