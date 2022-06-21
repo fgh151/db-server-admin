@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { useLogin, useNotify, Notification } from 'react-admin';
-import {apiUrl, dataProvider, httpClient} from "../../utils/http";
+import { useLogin, useNotify } from 'react-admin';
+import {apiUrl, httpClient} from "../../utils/http";
 
 const LoginPage = ({ theme }) => {
     const [email, setEmail] = useState('');
@@ -19,9 +19,8 @@ const LoginPage = ({ theme }) => {
     const github = e => {
         httpClient(`${apiUrl}/api/user/oauth/github/link`, {method: 'GET'})
             .then(value => {
-                console.log(value.body)
 
-                const w = window.open(value.body)
+                window.location.href = value.body
             })
     }
 

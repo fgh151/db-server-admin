@@ -50,66 +50,64 @@ const App = () => (
         dataProvider={dataProvider}
         authProvider={AuthProvider}
         store={store}
-        // requireAuth
     >
-        <Authenticated>
-            <Resource
-                name="admin/topics"
-                list={TopicsList}
-                options={{label: 'Topics'}}
-                create={TopicCreate}
-                edit={TopicEdit}
-            />
-            <Resource
-                name="admin/users"
-                list={UserList}
-                options={{label: 'Admins'}}
-                create={CreateUser}
-                edit={EditUser}
-            />
-            <Resource
-                name="admin/config"
-                list={ConfigList}
-                options={{label: 'Configs'}}
-                create={ConfigCreate}
-                edit={EditConfig}
-            />
-            <Resource
-                name="admin/ds"
-                list={DsList}
-                options={{label: 'Data sources'}}
-                create={DsCreate}
-                edit={EditDs}
-            />
-            <Resource
-                name="admin/cf"
-                list={CfList}
-                options={{label: 'Functions'}}
-                create={CfCreate}
-                edit={EditCf}
-            />
-            <Resource
-                name="admin/pl"
-                list={PipelineList}
-                options={{label: 'Pipelines'}}
-                create={PlCreate}
-                edit={EditPipeline}
-            />
-            <Resource
-                name="admin/push"
-                list={PushList}
-                options={{label: 'Push'}}
-                create={PushCreate}
-                edit={EditPush}
-            />
-            <Resource
-                name="admin/cron"
-                list={CronList}
-                options={{label: 'Cron'}}
-                create={CronCreate}
-                edit={EditCron}
-            />
-        </Authenticated>
+        <Resource
+            name="admin/topics"
+            list={TopicsList}
+            options={{label: 'Topics'}}
+            create={TopicCreate}
+            edit={TopicEdit}
+            re
+        />
+        <Resource
+            name="admin/users"
+            list={UserList}
+            options={{label: 'Admins'}}
+            create={CreateUser}
+            edit={EditUser}
+        />
+        <Resource
+            name="admin/config"
+            list={ConfigList}
+            options={{label: 'Configs'}}
+            create={ConfigCreate}
+            edit={EditConfig}
+        />
+        <Resource
+            name="admin/ds"
+            list={DsList}
+            options={{label: 'Data sources'}}
+            create={DsCreate}
+            edit={EditDs}
+        />
+        <Resource
+            name="admin/cf"
+            list={CfList}
+            options={{label: 'Functions'}}
+            create={CfCreate}
+            edit={EditCf}
+        />
+        <Resource
+            name="admin/pl"
+            list={PipelineList}
+            options={{label: 'Pipelines'}}
+            create={PlCreate}
+            edit={EditPipeline}
+        />
+        <Resource
+            name="admin/push"
+            list={PushList}
+            options={{label: 'Push'}}
+            create={PushCreate}
+            edit={EditPush}
+        />
+        <Resource
+            name="admin/cron"
+            list={CronList}
+            options={{label: 'Cron'}}
+            create={CronCreate}
+            edit={EditCron}
+        />
         <CustomRoutes>
             <Route exact path="/admin/ds/dse/:dsId" element={<DseList/>}
                    render={(routeProps) => <DseList resource="admin/ds/dse/:dsId" {...routeProps} />}/>

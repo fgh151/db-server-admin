@@ -1,25 +1,27 @@
 import * as React from 'react';
-import {useParams, useLocation} from "react-router-dom";
+import {useParams, useNavigate} from "react-router-dom";
 import authProvider from "../../authProvider";
-
+import {useEffect} from "react";
 
 
 const OAuth = (props) => {
 
-
     const {provider} = useParams();
+    const navigate = useNavigate();
 
-    const query =  new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
-});
+    const query = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
 
-    authProvider.oauth({"provider" : provider, "code": query.code})
+    useEffect(() => {
+        authProvider.oauth({"provider": provider, "code": query.code})
+            .then(() => {
+                console.log('true')
+                navigate("/", {replace: true});
+            })
+    }, []);
 
-
-    return (
-        <div> github</div>
-    )
-
+    return('')
 }
 
 export default OAuth
