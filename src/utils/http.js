@@ -7,6 +7,7 @@ export const httpClient = (url, options = {}) => {
     }
     const token = localStorage.getItem('token');
     options.headers.set('Authorization', `Bearer ${token}`);
+    options.headers.set('db-key', window._env_.REACT_APP_DB_KEY);
     return fetchUtils.fetchJson(url, options);
 };
 
