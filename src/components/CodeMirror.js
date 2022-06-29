@@ -26,7 +26,7 @@ const CodeMirror = (props) => {
         >
             <input type='hidden' name={props.name} value={val}/>
             <Editor
-                value={JSON.stringify(JSON.parse(value), null, 2)}
+                value={JSON.stringify(value, null, 2)}
                 options={{
                     theme: "default",
                     height: "auto",
