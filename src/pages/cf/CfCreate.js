@@ -13,8 +13,8 @@ export const CfCreate = (props) => (
                     <TextInput source="env" multiline={true} fullWidth={true}/>
                 </Grid>
                 <Grid item xs={6}>
-                     <ReferenceInput label="Project" source="project_id" reference="admin/topics">
-                        <SelectInput optionText="topic" validate={required()}  fullWidth={true}/>
+                     <ReferenceInput label="Project" source="project_id" reference="admin/projects">
+                        <SelectInput optionText="name" validate={required()}  fullWidth={true}/>
                     </ReferenceInput>
                     <FileInput name='dockerarc' source='dockerarc'>
                         <FileField source="dockerarc" name='dockerarc' title="dockerarc"/>

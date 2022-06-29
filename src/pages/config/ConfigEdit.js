@@ -39,8 +39,8 @@ export const EditConfig = (props) => (
                         <CodeMirror source="body" name='body'/>
                     </Box>
                     <Box flex={1} ml="1em">
-                        <ReferenceInput label="Project" source="project_id" reference="admin/topics">
-                            <SelectInput optionText="topic" validate={required()}/>
+                        <ReferenceInput label="Project" source="project_id" reference="admin/projects">
+                            <SelectInput optionText="name" validate={required()}/>
                         </ReferenceInput>
                     </Box>
                 </Box>

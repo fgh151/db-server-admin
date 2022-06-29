@@ -8,8 +8,8 @@ export const DsList = props => {
         <Datagrid>
             <TextField source="id"/>
             <TextField source="title"/>
-            <ReferenceField label="Project" source="project_id" reference="admin/topics">
-                <TextField source="topic"/>
+            <ReferenceField label="Project" source="project_id" reference="admin/projects">
+                <TextField source="name"/>
             </ReferenceField>
             <TextField source="type"/>
             <FunctionField render={(p) => {

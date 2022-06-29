@@ -15,8 +15,8 @@ export const DsCreate = (props) => (
                 {id: 'Xml', name: 'Xml'},
             ]}/>
             <BooleanInput label="Cache" source="cache"/>
-            <ReferenceInput label="Project" source="project_id" reference="admin/topics">
-                <SelectInput optionText="topic" validate={required()}/>
+            <ReferenceInput label="Project" source="project_id" reference="admin/projects">
+                <SelectInput optionText="name" validate={required()}/>
             </ReferenceInput>
         </SimpleForm>
     </Create>

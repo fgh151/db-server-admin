@@ -7,8 +7,8 @@ export const ConfigCreate = (props) => (
         <SimpleForm>
             <TextInput source="title" validate={required()}/>
             <TextInput multiline source="body" validate={required()}/>
-            <ReferenceInput label="Project" source="project_id" reference="admin/topics">
-                <SelectInput optionText="topic" validate={required()}/>
+            <ReferenceInput label="Project" source="project_id" reference="admin/projects">
+                <SelectInput optionText="name" validate={required()}/>
             </ReferenceInput>
         </SimpleForm>
     </Create>

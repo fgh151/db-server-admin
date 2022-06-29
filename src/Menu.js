@@ -13,7 +13,7 @@ import AltRouteIcon from '@mui/icons-material/AltRoute';
 const MainMenu = (props) => (
     <Menu {...props}>
         <DashboardMenuItem />
-        <MenuItemLink to="/admin/topics" primaryText="Topics" leftIcon={<BookIcon />}/>
+        <MenuItemLink to="/admin/projects" primaryText="Projects" leftIcon={<BookIcon />}/>
         <MenuItemLink to="/admin/users" primaryText="Users" leftIcon={<PeopleIcon />}/>
         <MenuItemLink to="/admin/config" primaryText="Configs" leftIcon={<SettingsApplications />}/>
         <MenuItemLink to="/admin/ds" primaryText="Data sources" leftIcon={<CallMerge />}/>

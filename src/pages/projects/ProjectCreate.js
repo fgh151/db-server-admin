@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import {Edit, SimpleForm, TextInput, required} from 'react-admin';
+import {Create, SimpleForm, TextInput, required} from 'react-admin';
 
-export const TopicEdit = (props) => (
-    <Edit {...props}>
+export const ProjectCreate = (props) => (
+    <Create {...props}>
         <SimpleForm>
-            <TextInput source="topic" validate={required()}/>
+            <TextInput source="name" validate={required()}/>
             <TextInput source="key" validate={required()}/>
             <TextInput multiline source="origins" validate={required()}/>
         </SimpleForm>
-    </Edit>
+    </Create>
 );

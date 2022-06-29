@@ -18,7 +18,7 @@ const Monitor = () => {
     const fetchData = () => {
 
         if (loading) {
-            httpClient(`${apiUrl}/admin/topics?_end=10&_order=ASC&_sort=id&_start=0`, {method: 'GET'})
+            httpClient(`${apiUrl}/admin/projects?_end=10&_order=ASC&_sort=id&_start=0`, {method: 'GET'})
                 .then((response) => {
                     const l = JSON.parse(response.body);
                     setList(l)

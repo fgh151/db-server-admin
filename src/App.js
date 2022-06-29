@@ -2,11 +2,8 @@ import "./App.css"
 
 import * as React from "react";
 import {Admin, CustomRoutes, localStorageStore, Resource, Authenticated} from 'react-admin';
-import {TopicCreate} from "./pages/topic/TopicCreate";
-import {TopicEdit} from "./pages/topic/TopicEdit";
 import AuthProvider from "./authProvider";
 import {UserList} from "./pages/user/list";
-import {TopicsList} from "./pages/topic/list";
 import {CreateUser} from "./pages/user/Create";
 import {EditUser} from "./pages/user/Edit";
 import Layout from "./Layout";
@@ -29,7 +26,6 @@ import {EditPush} from "./pages/push/CfEdit";
 import {CronList} from "./pages/cron/list";
 import {CronCreate} from "./pages/cron/CronCreate";
 import {EditCron} from "./pages/cron/CronEdit";
-import {ListData} from "./pages/topic/listData";
 import {DseList} from "./pages/dse/list";
 import {DseCreate} from "./pages/dse/DseCreate";
 import {DseEdit} from "./pages/dse/DseEdit";
@@ -38,6 +34,9 @@ import {PlCreate} from "./pages/pl/PlCreate";
 import {EditPipeline} from "./pages/pl/PlEdit";
 import LoginPage from "./pages/auth/Login";
 import OAuth from "./pages/auth/OAuth";
+import {ProjectsList} from "./pages/projects/list";
+import {ProjectCreate} from "./pages/projects/ProjectCreate";
+import {ProjectEdit} from "./pages/projects/ProjectEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -52,11 +51,11 @@ const App = () => (
         store={store}
     >
         <Resource
-            name="admin/topics"
-            list={TopicsList}
-            options={{label: 'Topics'}}
-            create={TopicCreate}
-            edit={TopicEdit}
+            name="admin/projects"
+            list={ProjectsList}
+            options={{label: 'Projects'}}
+            create={ProjectCreate}
+            edit={ProjectEdit}
             re
         />
         <Resource
@@ -117,8 +116,8 @@ const App = () => (
                    render={(routeProps) => <DseCreate resource="admin/ds/dse/:dsId" {...routeProps} />}/>
             <Route exact path="/log/cf/:id" element={<LogList/>}
                    render={(routeProps) => <LogList resource="logs" {...routeProps} />}/>
-            <Route exact path="/topic/data/:id/:name" element={<ListData/>}
-                   render={(routeProps) => <ListData resource="em" {...routeProps} />}/>
+            {/*<Route exact path="/topic/data/:id/:name" element={<ListData/>}*/}
+            {/*       render={(routeProps) => <ListData resource="em" {...routeProps} />}/>*/}
             <Route exact path="/monitor" element={<Monitor/>}/>
         </CustomRoutes>
         <CustomRoutes noLayout>
