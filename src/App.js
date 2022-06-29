@@ -37,6 +37,9 @@ import OAuth from "./pages/auth/OAuth";
 import {ProjectsList} from "./pages/projects/list";
 import {ProjectCreate} from "./pages/projects/ProjectCreate";
 import {ProjectEdit} from "./pages/projects/ProjectEdit";
+import {RdbList} from "./pages/rdb/list";
+import {RdbCreate} from "./pages/rdb/RdbCreate";
+import {RdbEdit} from "./pages/rdb/RdbEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -56,6 +59,14 @@ const App = () => (
             options={{label: 'Projects'}}
             create={ProjectCreate}
             edit={ProjectEdit}
+            re
+        />
+        <Resource
+            name="admin/rdb"
+            list={RdbList}
+            options={{label: 'Databases'}}
+            create={RdbCreate}
+            edit={RdbEdit}
             re
         />
         <Resource

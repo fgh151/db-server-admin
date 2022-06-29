@@ -9,11 +9,13 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import SettingsApplications from '@material-ui/icons/SettingsApplications'
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import AltRouteIcon from '@mui/icons-material/AltRoute';
+import DnsIcon from '@mui/icons-material/Dns';
 
 const MainMenu = (props) => (
     <Menu {...props}>
         <DashboardMenuItem />
         <MenuItemLink to="/admin/projects" primaryText="Projects" leftIcon={<BookIcon />}/>
+        <MenuItemLink to="/admin/rdb" primaryText="Database" leftIcon={<DnsIcon />}/>
         <MenuItemLink to="/admin/users" primaryText="Users" leftIcon={<PeopleIcon />}/>
         <MenuItemLink to="/admin/config" primaryText="Configs" leftIcon={<SettingsApplications />}/>
         <MenuItemLink to="/admin/ds" primaryText="Data sources" leftIcon={<CallMerge />}/>
