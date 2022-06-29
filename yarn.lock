@@ -3211,10 +3211,10 @@ coa@^2.0.2:
     chalk "^2.4.1"
     q "^1.1.2"
 
-codemirror@5.65.3:
-  version "5.65.3"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.3.tgz#2d029930d5a293bc5fb96ceea64654803c0d4ac7"
-  integrity sha512-kCC0iwGZOVZXHEKW3NDTObvM7pTIyowjty4BUqeREROc/3I6bWbgZDA3fGDwlA+rbgRjvnRnfqs9SfXynel1AQ==
+codemirror@5.65.6:
+  version "5.65.6"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.6.tgz#fc313797331cbeb3bcab0652d1ec9d0f40c23ab5"
+  integrity sha512-zNihMSMoDxK9Gqv9oEyDT8oM51rcRrQ+IEo2zyS48gJByBq5Fj8XuNEguMra+MuIOuh6lkpnLUJeL70DoTt6yw==
 
 collect-v8-coverage@^1.0.0:
   version "1.0.1"
@@ -7538,23 +7538,7 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-ra-core@4.2.0, ra-core@^4.0.3:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.2.0.tgz#46b9a07f8ff159f26d89557ea8ccb199d0a23e95"
-  integrity sha512-m6Ep7W84V/flIWpv/zPVfTqmvwduaxIO8zZlIUoXg1kPXRTSZH/EcO1A1zcvMM/HflWLoJ2LcZ4sE5fz3Je/1w==
-  dependencies:
-    clsx "^1.1.1"
-    date-fns "^2.19.0"
-    eventemitter3 "^4.0.7"
-    inflection "~1.12.0"
-    jsonexport "^3.2.0"
-    lodash "~4.17.5"
-    prop-types "^15.6.1"
-    query-string "^7.1.1"
-    react-is "^17.0.2"
-    react-query "^3.32.1"
-
-ra-core@^4.0.3, ra-core@^4.2.0:
+ra-core@4.2.0, ra-core@^4.0.3, ra-core@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.2.0.tgz#46b9a07f8ff159f26d89557ea8ccb199d0a23e95"
   integrity sha512-m6Ep7W84V/flIWpv/zPVfTqmvwduaxIO8zZlIUoXg1kPXRTSZH/EcO1A1zcvMM/HflWLoJ2LcZ4sE5fz3Je/1w==
