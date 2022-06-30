@@ -18,7 +18,7 @@ const Row = (props) => {
 
     const fetchContent =(event, expanded) => {
         if (expanded && loaded === false) {
-            httpClient(`${apiUrl}/admin/em/list/${props.item.name}?_end=10&_order=ASC&_sort=id&_start=0`, {method: 'GET'})
+            httpClient(`${apiUrl}/admin/em/list/${props.item.collection}?_end=10&_order=ASC&_sort=id&_start=0`, {method: 'GET'})
                 .then((response) => {
 
                     if (response.status === 200 ) {
@@ -37,7 +37,7 @@ const Row = (props) => {
                 id="panel2a-header"
             >
                 <Typography sx={{paddingX:10, flexShrink: 0}}>
-                    <b>{props.item.name}</b>
+                    <b>{props.item.collection}</b>
                 </Typography>
                 <Typography sx={{color: 'text.secondary'}}>
                     {props.item.id}
