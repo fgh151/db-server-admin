@@ -32,7 +32,7 @@ import {DseEdit} from "./pages/dse/DseEdit";
 import {PipelineList} from "./pages/pl/list";
 import {PlCreate} from "./pages/pl/PlCreate";
 import {EditPipeline} from "./pages/pl/PlEdit";
-import LoginPage from "./pages/auth/Login";
+import {Login} from "./pages/auth/Login";
 import OAuth from "./pages/auth/OAuth";
 import {ProjectsList} from "./pages/projects/list";
 import {ProjectCreate} from "./pages/projects/ProjectCreate";
@@ -46,7 +46,7 @@ store.setItem('sidebar.open', true);
 
 const App = () => (
     <Admin
-        loginPage={LoginPage}
+        loginPage={<Login backgroundImage="/login_bg.jpg" />}
         disableTelemetry
         layout={Layout}
         dataProvider={dataProvider}

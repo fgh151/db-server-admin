@@ -4,7 +4,7 @@ import authProvider from "../../authProvider";
 import {useEffect} from "react";
 
 
-const OAuth = (props) => {
+const OAuth = () => {
 
     const {provider} = useParams();
     const navigate = useNavigate();
