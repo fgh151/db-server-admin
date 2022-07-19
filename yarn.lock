@@ -7562,10 +7562,26 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-ra-core@4.2.1, ra-core@^4.2.1:
+ra-core@4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.2.1.tgz#8820e8ea9b70995a6418a1d302d2bc85f8f369a0"
   integrity sha512-4jbqYM41BwOsKskS/T3JX7ZwXehaZW5FBQk4EGSf2BVJkWf9pR+OzccV1vWLpaEZDiVDDGCpynnAGJAq/iUQTA==
+  dependencies:
+    clsx "^1.1.1"
+    date-fns "^2.19.0"
+    eventemitter3 "^4.0.7"
+    inflection "~1.12.0"
+    jsonexport "^3.2.0"
+    lodash "~4.17.5"
+    prop-types "^15.6.1"
+    query-string "^7.1.1"
+    react-is "^17.0.2"
+    react-query "^3.32.1"
+
+ra-core@^4.2.1, ra-core@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.2.3.tgz#b38778692687379062efdd5696135c26ce8bbc6c"
+  integrity sha512-dt/ct3dX6yEcRQfavjmWWKErtg8oCxerYI0cvTys9j2PUG4jxaIU088CKr5pBNuNSUG6PwHK6KzZy43CEpD82g==
   dependencies:
     clsx "^1.1.1"
     date-fns "^2.19.0"
@@ -7586,25 +7602,25 @@ ra-data-json-server@4.2.1:
     query-string "^7.1.1"
     ra-core "^4.2.1"
 
-ra-i18n-polyglot@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/ra-i18n-polyglot/-/ra-i18n-polyglot-4.2.1.tgz#8c4abb542b68c37d4b8276ce8957f8b04e9552b9"
-  integrity sha512-FCRsltKmPKcPwhQYov4LXklgI2iMUlSWBQGdc+x2eoMl2AfY04my45sufkDg8Ni39AjSYWZUesY3r+p0d6shoQ==
+ra-i18n-polyglot@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/ra-i18n-polyglot/-/ra-i18n-polyglot-4.2.3.tgz#7e19499720c8cacdc2a9c025946daaef540abb1b"
+  integrity sha512-NZ0qleoC+8w2eSfeF8L+YS2xi0W2f5W9quPmXOQdpJxnzFADUW5WUpUnkejGwcujLFmtUHzsVcygdBXeggeSRw==
   dependencies:
     node-polyglot "^2.2.2"
-    ra-core "^4.2.1"
+    ra-core "^4.2.3"
 
-ra-language-english@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/ra-language-english/-/ra-language-english-4.2.1.tgz#3e1d4160fb807333f3de05e1a9667dd9b5a505f9"
-  integrity sha512-CDIbNgv2o7krciYgLa1T7j4cYaPglKz0hnBehrkDEwXcROn24SKs+Jqu85VLIyxOwN7r0za7rgKso8LFDIK3SQ==
+ra-language-english@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/ra-language-english/-/ra-language-english-4.2.3.tgz#24120bed78bd938036825e88898d8c55fc6a912b"
+  integrity sha512-7Pgv9GLi4Sq8n87RAM8hqaIHFy0+htIPieutWcS0FVT+zMz1yuF5t2wGLaPWTi9wLpUs06ejEU8bvrDx7aF4tg==
   dependencies:
-    ra-core "^4.2.1"
+    ra-core "^4.2.3"
 
-ra-ui-materialui@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-4.2.2.tgz#3145c4625e67bbd02437a914bf8fcd68ea3e3a81"
-  integrity sha512-qkT1LtwSH8lAFtZ841umgGwNv8b0KPCN/bBq8IJo0erYuQguTmQgd+bGDqa2lE2Tzy9jK4F36x7L8Mj39qtZbg==
+ra-ui-materialui@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-4.2.3.tgz#ad84c3cd1d0fbde19d080e0b01e796f337e476e2"
+  integrity sha512-xQFzj+udo3gScpnyjM+ZNWyW13E+5DzE2Yax5iPzVF50nsQTmob//Iv7sXb9nmWw4leBl+pUWDf7Se8wGDgPJg==
   dependencies:
     autosuggest-highlight "^3.1.1"
     clsx "^1.1.1"
@@ -7648,20 +7664,20 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-admin@4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/react-admin/-/react-admin-4.2.2.tgz#27ae1bd0d060157ff1e2162fdf32a62d15e31207"
-  integrity sha512-cNasfF1UYC5et0QjCmhL1AADnC6QzEPlud8xsVmjHxZ2d3xZlvGG8yj+af8QWQmYgwvlBn4sR8BM+uA4F1e9XQ==
+react-admin@4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/react-admin/-/react-admin-4.2.3.tgz#bb4bd73a079de54d88f213fc6dde1e5bc500581c"
+  integrity sha512-ly1IkU7srWvjM3EmxeaC3pUlqXnUXXtACh0itat7XFH2LcsQtypaBcjAYFJqfA0Nu0Ki296O/UtB9gh9xaK7sA==
   dependencies:
     "@emotion/react" "^11.4.1"
     "@emotion/styled" "^11.3.0"
     "@mui/icons-material" "^5.0.1"
     "@mui/material" "^5.0.2"
     history "^5.1.0"
-    ra-core "^4.2.1"
-    ra-i18n-polyglot "^4.2.1"
-    ra-language-english "^4.2.1"
-    ra-ui-materialui "^4.2.2"
+    ra-core "^4.2.3"
+    ra-i18n-polyglot "^4.2.3"
+    ra-language-english "^4.2.3"
+    ra-ui-materialui "^4.2.3"
     react-hook-form "^7.31.0"
     react-router "^6.1.0"
     react-router-dom "^6.1.0"
