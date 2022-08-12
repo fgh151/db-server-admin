@@ -40,6 +40,9 @@ import {ProjectEdit} from "./pages/projects/ProjectEdit";
 import {RdbList} from "./pages/rdb/list";
 import {RdbCreate} from "./pages/rdb/RdbCreate";
 import {RdbEdit} from "./pages/rdb/RdbEdit";
+import {PluginList} from "./pages/plugin/list";
+import {PluginCreate} from "./pages/plugin/PluginCreate";
+import {EditPlugin} from "./pages/plugin/PluginEdit";
 
 const store = localStorageStore();
 store.setItem('sidebar.open', true);
@@ -117,6 +120,13 @@ const App = () => (
             options={{label: 'Cron'}}
             create={CronCreate}
             edit={EditCron}
+        />
+        <Resource
+            name="admin/plugin"
+            list={PluginList}
+            options={{label: 'Plugin'}}
+            create={PluginCreate}
+            edit={EditPlugin}
         />
         <CustomRoutes>
             <Route exact path="/admin/ds/dse/:dsId" element={<DseList/>}
