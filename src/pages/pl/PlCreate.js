@@ -12,6 +12,7 @@ export const PlCreate = (props) => (
             <TextInput source="input_id" validate={required()}/>
             <SelectInput source="output" choices={[
                 {id: 'topic', name: 'Topic'},
+                {id: 'plugin', name: 'Plugin'},
             ]}/>
             <TextInput source="output_id" validate={required()}/>
         </SimpleForm>
