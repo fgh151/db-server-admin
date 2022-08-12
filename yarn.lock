@@ -7584,23 +7584,7 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-ra-core@4.2.6:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.2.6.tgz#8c138b0d1cded261da0c7aae8e693afea02ced3a"
-  integrity sha512-N4ooTRohfp4pPbWQUhUC6WrkW304YvwMCAfW4x8m2DelJigEJo9WoY1ktCZ9gTspyrOUDGrMVZeG+a+xLMER5Q==
-  dependencies:
-    clsx "^1.1.1"
-    date-fns "^2.19.0"
-    eventemitter3 "^4.0.7"
-    inflection "~1.12.0"
-    jsonexport "^3.2.0"
-    lodash "~4.17.5"
-    prop-types "^15.6.1"
-    query-string "^7.1.1"
-    react-is "^17.0.2"
-    react-query "^3.32.1"
-
-ra-core@^4.2.6, ra-core@^4.2.7:
+ra-core@4.2.7, ra-core@^4.2.6, ra-core@^4.2.7:
   version "4.2.7"
   resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.2.7.tgz#56f23f6ab5c5eab9d09ea6d74c07d6daae2c60ea"
   integrity sha512-DFrQXsajMv95d2juhXpArDz2I7FVU6x8YtaJpmGaFsClGYK3qcMOfE+duVFdxpihczsihg4YSPumsvNtdtlg6w==
