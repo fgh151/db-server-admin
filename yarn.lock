@@ -7628,10 +7628,10 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-ra-core@4.2.8, ra-core@^4.2.8:
-  version "4.2.8"
-  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.2.8.tgz#72e87bb86b2be3b45d80eff9923028d685cf6edf"
-  integrity sha512-EAeGK6QC8bYgdupqSDJ4sHxmcHb+vZu0B8DxnPZWlTOafC7h4IQyHz86H+IWp/F6JWH18af6Fk/ep5wVUBN/Ew==
+ra-core@4.3.0, ra-core@^4.2.8:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.3.0.tgz#5fc4486e907588c250a20d46cd23822ce49a912b"
+  integrity sha512-ewsZ7XFdOiJQidkKSQTmCa1xtwPNWmKufTHIMMHtq7E4RZz2VgkJVVAPyxR7JNif5SvaZums02HRbQdZSh2QMg==
   dependencies:
     clsx "^1.1.1"
     date-fns "^2.19.0"
