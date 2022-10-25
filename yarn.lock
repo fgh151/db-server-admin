@@ -7664,10 +7664,10 @@ ra-core@4.3.3:
     react-is "^17.0.2"
     react-query "^3.32.1"
 
-ra-core@^4.3.4, ra-core@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.4.0.tgz#001e1d31598677ebddff35666dab4ad6de228ea3"
-  integrity sha512-/Ze5bEi8KCVjStzGlYW0Ke6YejnM/GLpbaKeCGYd8jPhD8IDXzmb3d9dPkpVrl8XY2T+BDR7TlYC0gvUYWPbQQ==
+ra-core@^4.3.4, ra-core@^4.4.4:
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.4.4.tgz#ebc2d21b74a5e49961e85a3b62696e786af864ac"
+  integrity sha512-SdJ8TTxgfYA33VLdQEqO39ZEu0sgByHdnEdTPFfonoPVc+OQTQ4ZmQwzvyDvmCqnsxyRaXw5Y9w2QBwKFs/NHw==
   dependencies:
     clsx "^1.1.1"
     date-fns "^2.19.0"
@@ -7680,13 +7680,13 @@ ra-core@^4.3.4, ra-core@^4.4.0:
     react-is "^17.0.2"
     react-query "^3.32.1"
 
-ra-data-json-server@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-4.4.0.tgz#f5a97ff2073cbdc0c9827367a90cc8b7c2dbc5ac"
-  integrity sha512-MOpSvihdE75vNLENrF06IVBUJB5sekjLGwCHZtOmEclClbihCwSCGc8FgwzPpQU/UJYAKAn+mM4zADem33qugA==
+ra-data-json-server@4.4.4:
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-4.4.4.tgz#99f4d464b82365b54d41d31879554bad75900651"
+  integrity sha512-+tdT/5FFsGUPN0aLUGtodD8qbGfIEdexz+td6VpfXEetpHD6gOURsjDCmCuWYGv3ga/Tw1JiWm5zul7GVA2Sjg==
   dependencies:
     query-string "^7.1.1"
-    ra-core "^4.4.0"
+    ra-core "^4.4.4"
 
 ra-i18n-polyglot@^4.3.4:
   version "4.3.4"
