@@ -3,9 +3,9 @@ import {useRecordContext} from "ra-core";
 import get from 'lodash/get';
 import * as React from "react";
 
-import './codemirror.css'
-import "./material.css";
-import './/javascript'
+import 'codemirror/lib/codemirror.css'
+import "codemirror/theme/material.css";
+import 'codemirror/mode/javascript/javascript'
 import Typography from "@material-ui/core/Typography";
 import {sanitizeFieldRestProps} from "react-admin";
 import {useState} from "react";
