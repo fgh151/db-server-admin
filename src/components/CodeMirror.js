@@ -5,7 +5,7 @@ import * as React from "react";
 
 import './codemirror.css'
 import "./material.css";
-import 'codemirror/mode/javascript/javascript'
+import './/javascript'
 import Typography from "@material-ui/core/Typography";
 import {sanitizeFieldRestProps} from "react-admin";
 import {useState} from "react";
