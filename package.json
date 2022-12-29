@@ -11,7 +11,7 @@
     "@material-ui/icons": "4.11.3",
     "@mui/icons-material": "5.11.0",
     "@mui/material": "5.11.2",
-    "codemirror": "^5.65.11",
+    "codemirror": "^6.0.1",
     "lodash": "4.17.21",
     "moment": "2.29.4",
     "ra-core": "4.6.2",
