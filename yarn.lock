@@ -7653,7 +7653,7 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-ra-core@4.6.2, ra-core@^4.5.2, ra-core@^4.6.2:
+ra-core@4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.6.2.tgz#8f12ae2d5cb72952599e86208b389969d43c3710"
   integrity sha512-Thp9QOffve+meV9FLCmNqUwZH9za2ik/gYvwKAeMdmVJSlSYxhDtPNasAIn73WgW8pQsJhAJ5UNczWKaDQORNg==
@@ -7669,13 +7669,29 @@ ra-core@4.6.2, ra-core@^4.5.2, ra-core@^4.6.2:
     react-is "^17.0.2"
     react-query "^3.32.1"
 
-ra-data-json-server@4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-4.5.2.tgz#bfdcf17de18aa489811148649650837077ec230f"
-  integrity sha512-ChSB3kf5e3ASwvhL7ah1fuxGj6UL0C1dfKdYeo8dH7mr+To7tHGOvY7yL7nmHuy7anBC04rPhdvyZMOQMsYC8Q==
+ra-core@^4.6.2, ra-core@^4.6.3:
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-4.6.3.tgz#f1f1fb92a0e4779c80ed3e7cb6255a2f4b957c4e"
+  integrity sha512-++UW1HJDy1m5EG8/6nRNr8btHxb7I5e5dMJXo83h0E7g5st2U6bIR0XLzIdcirOy5k3h3rM0lZP+tEA9M/Oxyw==
+  dependencies:
+    clsx "^1.1.1"
+    date-fns "^2.19.0"
+    eventemitter3 "^4.0.7"
+    inflection "~1.12.0"
+    jsonexport "^3.2.0"
+    lodash "~4.17.5"
+    prop-types "^15.6.1"
+    query-string "^7.1.1"
+    react-is "^17.0.2"
+    react-query "^3.32.1"
+
+ra-data-json-server@4.6.3:
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-4.6.3.tgz#e36482020f194c4291db5ce90cd6d5c183cce726"
+  integrity sha512-KChdLr/quUimzzsl5XTBc6jGg7EvQgjlRFi4Ymk8ovD/I11m2Vz8iXwgAV2kWDMKPqFuaRC9/xd6XZwjD/5zQQ==
   dependencies:
     query-string "^7.1.1"
-    ra-core "^4.5.2"
+    ra-core "^4.6.3"
 
 ra-i18n-polyglot@^4.6.2:
   version "4.6.2"
