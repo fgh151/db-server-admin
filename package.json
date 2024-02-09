@@ -13,7 +13,7 @@
     "@mui/material": "5.13.3",
     "codemirror": "^5.65.11",
     "lodash": "4.17.21",
-    "moment": "2.29.4",
+    "moment": "2.30.1",
     "ra-core": "4.16.9",
     "ra-data-json-server": "4.16.9",
     "react": "18.2.0",
