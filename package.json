@@ -14,7 +14,7 @@
     "codemirror": "^5.65.11",
     "lodash": "4.17.21",
     "moment": "2.30.1",
-    "ra-core": "4.16.9",
+    "ra-core": "4.16.12",
     "ra-data-json-server": "4.16.9",
     "react": "18.2.0",
     "react-admin": "4.16.9",
