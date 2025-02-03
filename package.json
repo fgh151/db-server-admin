@@ -18,7 +18,7 @@
     "ra-data-json-server": "4.16.17",
     "react": "18.3.1",
     "react-admin": "4.16.18",
-    "react-codemirror2": "7.2.1",
+    "react-codemirror2": "8.0.1",
     "react-dom": "18.3.1",
     "react-json-view": "1.21.3",
     "react-router-dom": "6.26.1",
